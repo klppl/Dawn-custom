@@ -75,6 +75,18 @@
             "white_logo_for_dark_mode": {
                 "type": "image"
             },
+            "icon_shape": {
+                "type": "select",
+                "options": [
+                    "Square",
+                    "Circle", 
+                    "Rounded Square",
+                    "Diamond",
+                    "Hexagon"
+                ],
+                "default": "Square",
+                "group": "homepage"
+            },
             "show_featured_posts": {
                 "type": "boolean",
                 "default": true,

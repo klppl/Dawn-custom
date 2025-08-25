@@ -8,6 +8,35 @@
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
 
     <style>
+        /* Publication icon shape styles */
+        .cover-icon-image {
+            {{#match @custom.icon_shape "=" "Circle"}}
+                border-radius: 50%;
+            {{else match @custom.icon_shape "=" "Rounded Square"}}
+                border-radius: 15%;
+            {{else match @custom.icon_shape "=" "Diamond"}}
+                border-radius: 0;
+                transform: rotate(45deg);
+                overflow: hidden;
+            {{else match @custom.icon_shape "=" "Hexagon"}}
+                border-radius: 0;
+                clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            {{else}}
+                border-radius: 0;
+            {{/match}}
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        {{#match @custom.icon_shape "=" "Diamond"}}
+        .cover-icon {
+            overflow: hidden;
+        }
+        .cover-icon-image {
+            transform: rotate(45deg) scale(1.4);
+        }
+        {{/match}}
+
         /* Responsive font size adjustments for mobile */
         @media (max-width: 767px) {
             .feed-title {
