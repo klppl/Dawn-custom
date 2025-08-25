@@ -94,6 +94,39 @@
                 "type": "boolean",
                 "default": true,
                 "group": "post"
+            },
+            "feed_title_size": {
+                "type": "select",
+                "options": [
+                    "Small (1.2rem)",
+                    "Medium (1.6rem)",
+                    "Large (2.0rem)",
+                    "Extra Large (2.4rem)"
+                ],
+                "default": "Medium (1.6rem)",
+                "group": "typography"
+            },
+            "featured_title_size": {
+                "type": "select",
+                "options": [
+                    "Small (1.4rem)",
+                    "Medium (1.8rem)",
+                    "Large (2.2rem)",
+                    "Extra Large (2.6rem)"
+                ],
+                "default": "Medium (1.8rem)",
+                "group": "typography"
+            },
+            "single_title_size": {
+                "type": "select",
+                "options": [
+                    "Small (2.8rem)",
+                    "Medium (4.0rem)",
+                    "Large (5.2rem)",
+                    "Extra Large (6.4rem)"
+                ],
+                "default": "Medium (4.0rem)",
+                "group": "typography"
             }
         }
     },

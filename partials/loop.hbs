@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <h2 class="feed-title">{{title}}</h2>
+    <h2 class="feed-title" style="font-size: {{#match @custom.feed_title_size "=" "Small (1.2rem)"}}1.2rem{{else match @custom.feed_title_size "=" "Large (2.0rem)"}}2.0rem{{else match @custom.feed_title_size "=" "Extra Large (2.4rem)"}}2.4rem{{else}}1.6rem{{/match}};">{{title}}</h2>
 
     <div class="feed-right">
         {{> "icons/star"}}

@@ -24,7 +24,7 @@
             </div>
             {{/is}}
 
-            <h1 class="single-title">{{title}}</h1>
+            <h1 class="single-title" style="font-size: {{#match @custom.single_title_size "=" "Small (2.8rem)"}}2.8rem{{else match @custom.single_title_size "=" "Large (5.2rem)"}}5.2rem{{else match @custom.single_title_size "=" "Extra Large (6.4rem)"}}6.4rem{{else}}4rem{{/match}};">{{title}}</h1>
 
             {{#if custom_excerpt}}
                 <div class="single-excerpt">

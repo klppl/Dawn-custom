@@ -7,6 +7,21 @@
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
 
+    <style>
+        /* Responsive font size adjustments for mobile */
+        @media (max-width: 767px) {
+            .feed-title {
+                font-size: {{#match @custom.feed_title_size "=" "Extra Large (2.4rem)"}}1.8rem{{else match @custom.feed_title_size "=" "Large (2.0rem)"}}1.6rem{{/match}} !important;
+            }
+            .featured-wrapper .post-title {
+                font-size: {{#match @custom.featured_title_size "=" "Extra Large (2.6rem)"}}2.0rem{{else match @custom.featured_title_size "=" "Large (2.2rem)"}}1.8rem{{/match}} !important;
+            }
+            .single-title {
+                font-size: {{#match @custom.single_title_size "=" "Extra Large (6.4rem)"}}3.2rem{{else match @custom.single_title_size "=" "Large (5.2rem)"}}3.0rem{{/match}} !important;
+            }
+        }
+    </style>
+
     {{ghost_head}}
 </head>
 
