@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+assets/built/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# AI documentation (local development only)
+.cursor/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Theme package
+*.zip
