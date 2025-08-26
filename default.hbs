@@ -49,6 +49,31 @@
                 font-size: {{#match @custom.single_title_size "=" "Extra Large (6.4rem)"}}3.2rem{{else match @custom.single_title_size "=" "Large (5.2rem)"}}3.0rem{{/match}} !important;
             }
         }
+
+        /* Custom footer styles */
+        .gh-foot {
+            margin-top: auto;
+            padding: 2rem 0;
+        }
+        
+        .gh-foot-inner {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+        
+        .gh-foot .gh-copyright {
+            text-align: center !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+            color: var(--color-secondary-text, #999);
+            display: block !important;
+        }
     </style>
 
     {{ghost_head}}
@@ -121,18 +146,10 @@
         {{{body}}}
     </div>
 
-    <footer class="gh-foot{{#unless @site.secondary_navigation}} no-menu{{/unless}} gh-outer">
+    <footer class="gh-foot gh-outer">
         <div class="gh-foot-inner gh-inner">
             <div class="gh-copyright">
-                {{@site.title}} © {{date format="YYYY"}}
-            </div>
-            {{#if @site.secondary_navigation}}
-                <nav class="gh-foot-menu">
-                    {{navigation type="secondary"}}
-                </nav>
-            {{/if}}
-            <div class="gh-powered-by">
-                <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
+                My curiosity runs on borrowed time and the illusion of control.
             </div>
         </div>
     </footer>
