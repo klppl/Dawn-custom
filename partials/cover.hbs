@@ -1,9 +1,11 @@
 <div class="cover gh-outer">
     <div class="cover-content gh-inner">
-        {{#if @site.icon}}
-            <div class="cover-icon">
-                <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
-            </div>
+        {{#if @custom.show_publication_icon}}
+            {{#if @site.icon}}
+                <div class="cover-icon{{#match @custom.publication_icon_alignment "=" "Left"}} icon-left{{else match @custom.publication_icon_alignment "=" "Right"}} icon-right{{else}} icon-center{{/match}}">
+                    <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+                </div>
+            {{/if}}
         {{/if}}
 
         {{#if @site.description}}

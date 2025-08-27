@@ -1,0 +1,33 @@
+{{!-- Frontpage About Section - Uses 'frontpage-about' page content or site description --}}
+{{#get "pages" filter="slug:frontpage-about" limit="1"}}
+    {{#foreach pages}}
+        <div class="frontpage-about gh-outer">
+            <div class="frontpage-about-content gh-inner{{#match @custom.about_text_alignment "=" "Left"}} text-left{{else match @custom.about_text_alignment "=" "Right"}} text-right{{else}} text-center{{/match}}">
+                {{#if @custom.show_publication_icon}}
+                    {{#if @site.icon}}
+                        <div class="cover-icon{{#match @custom.publication_icon_alignment "=" "Left"}} icon-left{{else match @custom.publication_icon_alignment "=" "Right"}} icon-right{{else}} icon-center{{/match}}">
+                            <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+                        </div>
+                    {{/if}}
+                {{/if}}
+                {{content}}
+            </div>
+        </div>
+    {{/foreach}}
+{{else}}
+    {{!-- Fallback to site description if no frontpage-about page exists --}}
+    {{#if @site.description}}
+        <div class="frontpage-about gh-outer">
+            <div class="frontpage-about-content gh-inner{{#match @custom.about_text_alignment "=" "Left"}} text-left{{else match @custom.about_text_alignment "=" "Right"}} text-right{{else}} text-center{{/match}}">
+                {{#if @custom.show_publication_icon}}
+                    {{#if @site.icon}}
+                        <div class="cover-icon{{#match @custom.publication_icon_alignment "=" "Left"}} icon-left{{else match @custom.publication_icon_alignment "=" "Right"}} icon-right{{else}} icon-center{{/match}}">
+                            <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+                        </div>
+                    {{/if}}
+                {{/if}}
+                <div class="site-description">{{@site.description}}</div>
+            </div>
+        </div>
+    {{/if}}
+{{/get}}

@@ -27,6 +27,22 @@
             object-fit: cover;
             transition: all 0.3s ease;
         }
+
+        /* Publication icon alignment styles */
+        .cover-icon.icon-left {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .cover-icon.icon-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .cover-icon.icon-right {
+            display: flex;
+            justify-content: flex-end;
+        }
         
         {{#match @custom.icon_shape "=" "Diamond"}}
         .cover-icon {
@@ -73,6 +89,40 @@
             opacity: 0.8;
             color: var(--color-secondary-text, #999);
             display: block !important;
+        }
+
+        /* Frontpage About Section - Minimal styling that inherits theme design */
+        .frontpage-about {
+            padding: 2rem 0 0 0;
+        }
+
+        .frontpage-about-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .frontpage-about-content.text-left {
+            text-align: left;
+        }
+
+        .frontpage-about-content.text-center {
+            text-align: center;
+        }
+
+        .frontpage-about-content.text-right {
+            text-align: right;
+        }
+
+        .site-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--color-secondary-text, #999);
+        }
+
+        @media (max-width: 767px) {
+            .frontpage-about {
+                padding: 1.5rem 0 0 0;
+            }
         }
     </style>
 
@@ -135,7 +185,11 @@
     </header>
 
     {{#is "home"}}
-        {{> "cover"}}
+        {{#if @custom.show_frontpage_about}}
+            {{> "about-me"}}
+        {{else}}
+            {{> "cover"}}
+        {{/if}}
 
         {{#if @custom.show_featured_posts}}
             {{> "featured-posts"}}

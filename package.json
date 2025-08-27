@@ -1,7 +1,7 @@
 {
     "name": "dawn",
     "description": "A Ghost theme - custom",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -19,7 +19,7 @@
     ],
     "docs": "https://dawn.ghost.io/about/",
     "config": {
-        "posts_per_page": 5,
+        "posts_per_page": 20,
         "image_sizes": {
             "xs": {
                 "width": 150
@@ -139,6 +139,36 @@
                 ],
                 "default": "Medium (4.0rem)",
                 "group": "typography"
+            },
+            "show_frontpage_about": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "show_publication_icon": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "publication_icon_alignment": {
+                "type": "select",
+                "options": [
+                    "Left",
+                    "Center", 
+                    "Right"
+                ],
+                "default": "Center",
+                "group": "homepage"
+            },
+            "about_text_alignment": {
+                "type": "select",
+                "options": [
+                    "Left",
+                    "Center", 
+                    "Right"
+                ],
+                "default": "Center",
+                "group": "homepage"
             }
         }
     },
